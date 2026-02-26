@@ -1,0 +1,211 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1100 820" font-family="Segoe UI, Arial, sans-serif">
+  <defs>
+    <filter id="shadow" x="-4%" y="-4%" width="108%" height="108%">
+      <feDropShadow dx="2" dy="2" stdDeviation="3" flood-opacity="0.15"/>
+    </filter>
+    <linearGradient id="headerGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#1a73e8"/>
+      <stop offset="100%" style="stop-color:#4285f4"/>
+    </linearGradient>
+    <linearGradient id="agentGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#e8f0fe"/>
+      <stop offset="100%" style="stop-color:#d2e3fc"/>
+    </linearGradient>
+    <linearGradient id="toolGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#fef7e0"/>
+      <stop offset="100%" style="stop-color:#feefc3"/>
+    </linearGradient>
+    <linearGradient id="bqGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#e6f4ea"/>
+      <stop offset="100%" style="stop-color:#ceead6"/>
+    </linearGradient>
+    <linearGradient id="callbackGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#fce8e6"/>
+      <stop offset="100%" style="stop-color:#fadbd8"/>
+    </linearGradient>
+    <linearGradient id="evalGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#f3e8fd"/>
+      <stop offset="100%" style="stop-color:#e8d5f5"/>
+    </linearGradient>
+    <marker id="arrowBlue" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#4285f4"/>
+    </marker>
+    <marker id="arrowGreen" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#34a853"/>
+    </marker>
+    <marker id="arrowOrange" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#ea8600"/>
+    </marker>
+    <marker id="arrowRed" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#d93025"/>
+    </marker>
+    <marker id="arrowPurple" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#9334e6"/>
+    </marker>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1100" height="820" rx="12" fill="#f8f9fa" stroke="#dadce0" stroke-width="1"/>
+
+  <!-- Title Bar -->
+  <rect x="0" y="0" width="1100" height="56" rx="12" fill="url(#headerGrad)"/>
+  <rect x="0" y="24" width="1100" height="32" fill="url(#headerGrad)"/>
+  <text x="550" y="36" text-anchor="middle" fill="white" font-size="20" font-weight="600">NL2SQL E-Commerce Analytics Agent  //  Architecture</text>
+
+  <!-- USER LAYER -->
+  <rect x="410" y="76" width="280" height="56" rx="28" fill="white" stroke="#4285f4" stroke-width="2" filter="url(#shadow)"/>
+  <circle cx="446" cy="104" r="16" fill="#4285f4"/>
+  <text x="446" y="100" text-anchor="middle" fill="white" font-size="14">&#x1F464;</text>
+  <text x="466" y="100" fill="#202124" font-size="13" font-weight="600" dx="8">User (Natural Language)</text>
+  <text x="550" y="116" text-anchor="middle" fill="#5f6368" font-size="10">"Who are our top customers?"</text>
+
+  <!-- Arrow: User to ADK Web UI -->
+  <line x1="550" y1="132" x2="550" y2="156" stroke="#4285f4" stroke-width="2" marker-end="url(#arrowBlue)"/>
+
+  <!-- ADK WEB UI -->
+  <rect x="430" y="158" width="240" height="38" rx="8" fill="white" stroke="#4285f4" stroke-width="1.5" filter="url(#shadow)"/>
+  <text x="550" y="182" text-anchor="middle" fill="#1a73e8" font-size="12" font-weight="600">ADK Web UI (port 8000)</text>
+
+  <!-- Arrow: ADK Web UI to Root Agent -->
+  <line x1="550" y1="196" x2="550" y2="226" stroke="#4285f4" stroke-width="2" marker-end="url(#arrowBlue)"/>
+
+  <!-- ROOT AGENT BOX -->
+  <rect x="310" y="228" width="480" height="120" rx="12" fill="url(#agentGrad)" stroke="#1a73e8" stroke-width="2" filter="url(#shadow)"/>
+  <rect x="310" y="228" width="480" height="32" rx="12" fill="#1a73e8"/>
+  <rect x="310" y="248" width="480" height="12" fill="#1a73e8"/>
+  <text x="550" y="248" text-anchor="middle" fill="white" font-size="13" font-weight="600">Root Agent: ecom_analyst</text>
+  <text x="550" y="278" text-anchor="middle" fill="#202124" font-size="11">Model: Gemini 2.5 Flash (via AI Studio)</text>
+  <text x="550" y="296" text-anchor="middle" fill="#5f6368" font-size="10">Interprets questions, selects tools, generates SQL, presents results</text>
+  <text x="550" y="314" text-anchor="middle" fill="#5f6368" font-size="10">Instructions: table schemas, column details, query guidelines, read-only rules</text>
+  <text x="550" y="332" text-anchor="middle" fill="#1a73e8" font-size="10" font-weight="500">4 Tools  |  2 Callbacks  |  Safety Guardrails</text>
+
+  <!-- CALLBACK BOXES (left side) -->
+  <rect x="30" y="240" width="240" height="50" rx="8" fill="url(#callbackGrad)" stroke="#d93025" stroke-width="1.5" filter="url(#shadow)"/>
+  <text x="150" y="260" text-anchor="middle" fill="#c5221f" font-size="11" font-weight="600">before_tool_callback</text>
+  <text x="150" y="276" text-anchor="middle" fill="#5f6368" font-size="9">Logs tool name + args before execution</text>
+
+  <rect x="30" y="300" width="240" height="50" rx="8" fill="url(#callbackGrad)" stroke="#d93025" stroke-width="1.5" filter="url(#shadow)"/>
+  <text x="150" y="320" text-anchor="middle" fill="#c5221f" font-size="11" font-weight="600">after_tool_callback</text>
+  <text x="150" y="336" text-anchor="middle" fill="#5f6368" font-size="9">Audit logs tool responses for observability</text>
+
+  <!-- Arrows: Callbacks to Agent -->
+  <line x1="270" y1="265" x2="308" y2="275" stroke="#d93025" stroke-width="1.5" stroke-dasharray="5,3" marker-end="url(#arrowRed)"/>
+  <line x1="270" y1="325" x2="308" y2="315" stroke="#d93025" stroke-width="1.5" stroke-dasharray="5,3" marker-end="url(#arrowRed)"/>
+
+  <!-- SQL VALIDATOR (right side) -->
+  <rect x="830" y="250" width="240" height="88" rx="10" fill="url(#evalGrad)" stroke="#9334e6" stroke-width="1.5" filter="url(#shadow)"/>
+  <rect x="830" y="250" width="240" height="26" rx="10" fill="#9334e6"/>
+  <rect x="830" y="266" width="240" height="10" fill="#9334e6"/>
+  <text x="950" y="269" text-anchor="middle" fill="white" font-size="11" font-weight="600">AgentTool: sql_validator</text>
+  <text x="950" y="296" text-anchor="middle" fill="#202124" font-size="10">Gemini 2.5 Flash</text>
+  <text x="950" y="312" text-anchor="middle" fill="#5f6368" font-size="9">Reviews SQL for safety, syntax,</text>
+  <text x="950" y="324" text-anchor="middle" fill="#5f6368" font-size="9">table refs, and performance</text>
+
+  <!-- Arrow: Agent to SQL Validator -->
+  <line x1="790" y1="290" x2="828" y2="290" stroke="#9334e6" stroke-width="1.5" marker-end="url(#arrowPurple)"/>
+  <text x="808" y="282" text-anchor="middle" fill="#9334e6" font-size="8" font-style="italic">optional</text>
+
+  <!-- TOOLS ROW -->
+  <!-- Arrow: Agent to Tools -->
+  <line x1="430" y1="348" x2="430" y2="388" stroke="#ea8600" stroke-width="2" marker-end="url(#arrowOrange)"/>
+  <line x1="550" y1="348" x2="550" y2="388" stroke="#ea8600" stroke-width="2" marker-end="url(#arrowOrange)"/>
+  <line x1="670" y1="348" x2="670" y2="388" stroke="#ea8600" stroke-width="2" marker-end="url(#arrowOrange)"/>
+
+  <!-- execute_sql -->
+  <rect x="340" y="390" width="180" height="80" rx="10" fill="url(#toolGrad)" stroke="#ea8600" stroke-width="1.5" filter="url(#shadow)"/>
+  <text x="430" y="414" text-anchor="middle" fill="#e37400" font-size="12" font-weight="600">execute_sql()</text>
+  <text x="430" y="432" text-anchor="middle" fill="#5f6368" font-size="9">Runs read-only SQL</text>
+  <text x="430" y="446" text-anchor="middle" fill="#5f6368" font-size="9">Blocks: DELETE, DROP, UPDATE</text>
+  <text x="430" y="460" text-anchor="middle" fill="#5f6368" font-size="9">INSERT, ALTER, CREATE, etc.</text>
+
+  <!-- get_schema -->
+  <rect x="460" y="390" width="180" height="80" rx="10" fill="url(#toolGrad)" stroke="#ea8600" stroke-width="1.5" filter="url(#shadow)" transform="translate(80,0)"/>
+  <text x="620" y="414" text-anchor="middle" fill="#e37400" font-size="12" font-weight="600">get_schema()</text>
+  <text x="620" y="432" text-anchor="middle" fill="#5f6368" font-size="9">Returns column names,</text>
+  <text x="620" y="446" text-anchor="middle" fill="#5f6368" font-size="9">types, and row counts</text>
+
+  <!-- list_tables -->
+  <rect x="730" y="390" width="180" height="80" rx="10" fill="url(#toolGrad)" stroke="#ea8600" stroke-width="1.5" filter="url(#shadow)"/>
+  <text x="820" y="414" text-anchor="middle" fill="#e37400" font-size="12" font-weight="600">list_tables()</text>
+  <text x="820" y="432" text-anchor="middle" fill="#5f6368" font-size="9">Lists available tables</text>
+  <text x="820" y="446" text-anchor="middle" fill="#5f6368" font-size="9">in ecom_analytics</text>
+
+  <!-- Safety Shield Icon (left of tools) -->
+  <rect x="60" y="400" width="200" height="60" rx="8" fill="#fce8e6" stroke="#d93025" stroke-width="1.5" stroke-dasharray="6,3"/>
+  <text x="160" y="422" text-anchor="middle" fill="#c5221f" font-size="11" font-weight="600">Safety Guardrails</text>
+  <text x="160" y="438" text-anchor="middle" fill="#5f6368" font-size="9">3 layers: Instructions + Tool-level</text>
+  <text x="160" y="452" text-anchor="middle" fill="#5f6368" font-size="9">keyword block + AgentTool review</text>
+
+  <!-- BIGQUERY CLIENT -->
+  <!-- Arrows: Tools to BQ Client -->
+  <line x1="430" y1="470" x2="430" y2="504" stroke="#34a853" stroke-width="2"/>
+  <line x1="620" y1="470" x2="550" y2="504" stroke="#34a853" stroke-width="1.5"/>
+  <line x1="820" y1="470" x2="670" y2="504" stroke="#34a853" stroke-width="1.5"/>
+
+  <rect x="340" y="506" width="420" height="50" rx="10" fill="white" stroke="#34a853" stroke-width="2" filter="url(#shadow)"/>
+  <text x="550" y="528" text-anchor="middle" fill="#137333" font-size="12" font-weight="600">BigQuery Client</text>
+  <text x="550" y="544" text-anchor="middle" fill="#5f6368" font-size="10">google.cloud.bigquery  |  gcloud token credentials</text>
+
+  <!-- Arrow: BQ Client to Dataset -->
+  <line x1="550" y1="556" x2="550" y2="588" stroke="#34a853" stroke-width="2" marker-end="url(#arrowGreen)"/>
+
+  <!-- BIGQUERY DATASET -->
+  <rect x="200" y="590" width="700" height="140" rx="12" fill="url(#bqGrad)" stroke="#34a853" stroke-width="2" filter="url(#shadow)"/>
+  <rect x="200" y="590" width="700" height="30" rx="12" fill="#34a853"/>
+  <rect x="200" y="608" width="700" height="12" fill="#34a853"/>
+  <text x="550" y="610" text-anchor="middle" fill="white" font-size="13" font-weight="600">BigQuery Dataset: ecom_analytics  (playground-s-11-6d7b503d)</text>
+
+  <!-- Products Table -->
+  <rect x="226" y="636" width="200" height="80" rx="8" fill="white" stroke="#34a853" stroke-width="1"/>
+  <text x="326" y="656" text-anchor="middle" fill="#137333" font-size="12" font-weight="600">products</text>
+  <text x="326" y="672" text-anchor="middle" fill="#5f6368" font-size="9">50 rows  |  10 columns</text>
+  <text x="326" y="686" text-anchor="middle" fill="#5f6368" font-size="9">product_id, product_name,</text>
+  <text x="326" y="698" text-anchor="middle" fill="#5f6368" font-size="9">category, brand, unit_price, unit_cost</text>
+  <text x="326" y="710" text-anchor="middle" fill="#5f6368" font-size="9">avg_rating, total_reviews, is_active</text>
+
+  <!-- Customers Table -->
+  <rect x="450" y="636" width="200" height="80" rx="8" fill="white" stroke="#34a853" stroke-width="1"/>
+  <text x="550" y="656" text-anchor="middle" fill="#137333" font-size="12" font-weight="600">customers</text>
+  <text x="550" y="672" text-anchor="middle" fill="#5f6368" font-size="9">30 rows  |  11 columns</text>
+  <text x="550" y="686" text-anchor="middle" fill="#5f6368" font-size="9">customer_id, first_name, last_name,</text>
+  <text x="550" y="698" text-anchor="middle" fill="#5f6368" font-size="9">region, state, loyalty_tier,</text>
+  <text x="550" y="710" text-anchor="middle" fill="#5f6368" font-size="9">signup_date, lifetime_value</text>
+
+  <!-- Orders Table -->
+  <rect x="674" y="636" width="200" height="80" rx="8" fill="white" stroke="#34a853" stroke-width="1"/>
+  <text x="774" y="656" text-anchor="middle" fill="#137333" font-size="12" font-weight="600">orders</text>
+  <text x="774" y="672" text-anchor="middle" fill="#5f6368" font-size="9">100 rows  |  12 columns</text>
+  <text x="774" y="686" text-anchor="middle" fill="#5f6368" font-size="9">order_id, customer_id, order_date,</text>
+  <text x="774" y="698" text-anchor="middle" fill="#5f6368" font-size="9">total_amount, payment_method,</text>
+  <text x="774" y="710" text-anchor="middle" fill="#5f6368" font-size="9">shipping_region, order_status</text>
+
+  <!-- FK Arrow -->
+  <line x1="674" y1="690" x2="652" y2="690" stroke="#34a853" stroke-width="1.5" stroke-dasharray="4,2"/>
+  <text x="663" y="685" text-anchor="middle" fill="#34a853" font-size="8">FK</text>
+
+  <!-- EVAL SET (bottom right) -->
+  <rect x="930" y="590" width="150" height="80" rx="10" fill="url(#evalGrad)" stroke="#9334e6" stroke-width="1.5" filter="url(#shadow)"/>
+  <text x="1005" y="614" text-anchor="middle" fill="#7627bb" font-size="11" font-weight="600">Eval Set</text>
+  <text x="1005" y="632" text-anchor="middle" fill="#5f6368" font-size="9">10 test cases</text>
+  <text x="1005" y="646" text-anchor="middle" fill="#5f6368" font-size="9">with rubrics</text>
+  <text x="1005" y="660" text-anchor="middle" fill="#5f6368" font-size="9">.evalset.json</text>
+
+  <!-- Legend -->
+  <rect x="30" y="750" width="1040" height="54" rx="8" fill="white" stroke="#dadce0" stroke-width="1"/>
+  <rect x="50" y="768" width="14" height="14" rx="3" fill="url(#agentGrad)" stroke="#1a73e8" stroke-width="1"/>
+  <text x="70" y="780" fill="#5f6368" font-size="10">Agent</text>
+  <rect x="130" y="768" width="14" height="14" rx="3" fill="url(#toolGrad)" stroke="#ea8600" stroke-width="1"/>
+  <text x="150" y="780" fill="#5f6368" font-size="10">Custom Tool</text>
+  <rect x="240" y="768" width="14" height="14" rx="3" fill="url(#bqGrad)" stroke="#34a853" stroke-width="1"/>
+  <text x="260" y="780" fill="#5f6368" font-size="10">BigQuery</text>
+  <rect x="340" y="768" width="14" height="14" rx="3" fill="url(#callbackGrad)" stroke="#d93025" stroke-width="1"/>
+  <text x="360" y="780" fill="#5f6368" font-size="10">Callback / Guardrail</text>
+  <rect x="490" y="768" width="14" height="14" rx="3" fill="url(#evalGrad)" stroke="#9334e6" stroke-width="1"/>
+  <text x="510" y="780" fill="#5f6368" font-size="10">AgentTool / Eval</text>
+  <line x1="630" y1="775" x2="660" y2="775" stroke="#4285f4" stroke-width="2" marker-end="url(#arrowBlue)"/>
+  <text x="668" y="780" fill="#5f6368" font-size="10">Data flow</text>
+  <line x1="740" y1="775" x2="770" y2="775" stroke="#d93025" stroke-width="1.5" stroke-dasharray="5,3" marker-end="url(#arrowRed)"/>
+  <text x="778" y="780" fill="#5f6368" font-size="10">Hook / callback</text>
+  <line x1="880" y1="775" x2="910" y2="775" stroke="#9334e6" stroke-width="1.5" marker-end="url(#arrowPurple)"/>
+  <text x="918" y="780" fill="#5f6368" font-size="10">Optional delegation</text>
+</svg>

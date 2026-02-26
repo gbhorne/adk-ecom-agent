@@ -77,6 +77,15 @@ adk-ecom-agent/
 
 ---
 
+## Documentation
+
+- [Architecture](ARCHITECTURE.md) - System design, tool design, callback strategy, credential approach, data model
+- [Build Guide](BUILD_GUIDE.md) - Step-by-step instructions to recreate this project from scratch
+- [Technical Q&A](docs/NL2SQL_Agent_QA.docx) - 19 interview-ready questions and answers across 8 sections
+- [Verification Report](VERIFICATION_REPORT.md) - 84/84 automated checks passed
+
+---
+
 ## Dataset
 
 | Table | Rows | Key Columns |
@@ -158,3 +167,4 @@ This is Project B in a series of eight ADK agent projects:
 ## License
 
 MIT
+
